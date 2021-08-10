@@ -6,17 +6,17 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const path = require("path");
 const logger = require("./lib/logger");
-const bootStrap = require("./boot");		// ./boot/index
+const bootStrap = require("./boot");
 
 /* 라우터 */
 const memberRouter = require("./routes/member");
-const mainRouter = require("./routes")	// ./routes/index
+const mainRouter = require("./routes")
 
 const app = express();
 
-dotenv.config();	//env -> process.env 하위 속성으로 추가
+dotenv.config();
 
-app.set("PORT", process.env.PORT || 3000);
+app.set("PORT", process.env.PORT || 3004);
 app.set("view engine", "html");
 nunjucks.configure(path.join(__dirname, "views"), {
 	express : app,
@@ -24,7 +24,6 @@ nunjucks.configure(path.join(__dirname, "views"), {
 });
 
 app.use(morgan("dev"));
-// app.use("/", express.static(path.join(__dirname, "public")));	메인경로 "/" 생략가능
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended : false }));
@@ -34,21 +33,21 @@ app.use(session({
 	saveUninitialized : true,
 	secret : process.env.COOKIE_SECRET,
 	cookie : {
-		httpOnly : true, // 세션 쿠키 변경, 설정 -> 서버 상에서만 가능
+		httpOnly : true, 
 	},
 	name : "yhsessid",
 }));
 
-app.use(bootStrap);	// 사이트 초기화 미들웨어
+app.use(bootStrap);	
 
 /* 라우터 등록 */
-// app.use("/", mainRouter);	// "/" 생략 가능
-app.use("/", mainRouter);	// 메인페이지
-app.use("/member", memberRouter); /* /member ... 라우터 */
 
-/* 없는 페이지 라우터 (가장 하단에 위치) - 404 NOT FOUND */
+app.use("/", mainRouter);	
+app.use("/member", memberRouter); 
+
+
 app.use((req, res, next) => {
-	const err = new Error(`${req.url}은 없는 페이지 입니다.` );
+	const err = new Error(`${req.url}은 존재하지 않는 페이지 입니다.` );
 	err.status = 404;
 	next(err);
 });
@@ -73,5 +72,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(app.get("PORT"), () => {
-	console.log(app.get("PORT"), "번 포트에서 서버 대기중..");
+	console.log(app.get("PORT"), "번 포트에서 서버 대기중!!!!!");
 });

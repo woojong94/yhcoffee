@@ -78,6 +78,7 @@ body dd {
 }
 
 footer { 
+	width=device-width;
 	border-top: 1px solid #d19f6d;
 	margin-top: 60px;
 	min-height: 250px;

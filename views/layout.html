@@ -2,10 +2,47 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		
+<!-- 		부분 CSS 적용시 사용
+		{% if addCss.length > 0 %}
+		{% for css in addCss %}
+		<link rel="stylesheet" type="text/css" href="/css/{{ css }}.css">
+		{% endfor %}
+		{% endif %} -->
+
 	</head>
 	<body>
-		{% block content %}
+		<!-- {% block content %}
+		{% endblock %} -->
+
+
+		{% block header %}
+		<header>
+		{% include "outline/header/header.html" %}
+		</header>
 		{% endblock %}
-		<iframe name="ifrmHidden" width="100%"  height="500" frameborder="0"></iframe>
+
+		{% block nav %}
+		<nav>
+		{% include "outline/nav/nav.html" %}		
+		</nav>
+		{% endblock %}
+	
+
+		{% block main %}
+		<main>
+		{% include "outline/main/main.html" %}
+		</main>
+		{% endblock %}
+
+
+		{% block footer %}
+		<footer>
+		{% include "outline/footer/footer.html" %}
+		</footer>
+		{% endblock %}
 	</body>
 </html>

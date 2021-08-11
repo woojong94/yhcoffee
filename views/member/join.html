@@ -1,30 +1,68 @@
-{% extends "../layout.html" %}
+{% extends '../layout.html' %}
 {% block content %}
-<form method="post" action="../member/join" target="ifrmHidden">
-	<dl>
-		<dt>아이디</dt>
-		<dd>
-			<input type="text" name="memId">
-		</dd>
-	</dl>
-	<dl>
-		<dt>비밀번호</dt>
-		<dd>
-			<input type="password" name="memPw">
-		</dd>
-	</dl>
-	<dl>
-		<dt>비밀번호 확인</dt>
-		<dd>
-			<input type="password" name="memPwRe">
-		</dd>
-	</dl>
-	<dl>
-		<dt>회원명</dt>
-		<dd>
-			<input type="text" name="memNm">
-		</dd>
-	</dl>
-	<input type="submit" value="회원가입">
+<form method = "post" action = "/member/join" target = "ifrmHidden">
+	<div class="Bor">
+		<dl>
+			<dt class='all'>아이디</dt>
+			<dd>
+				<input type = "text" name = "memId" placeholder="ID">
+			</dd>
+		</dl>
+		<dl>
+			<dt class='all'>비밀번호</dt>
+			<dd>
+				<input type = "password" name = "memPw" placeholder="Password">
+			</dd>
+		</dl>
+		<dl>
+			<dt class='all'>비밀번호 확인</dt>
+			<dd>
+				<input type = "password" name = "memPwRe" placeholder="Confirm Password">
+			</dd>
+		</dl>
+			<dl>
+			<dt class='all'>이름</dt>
+			<dd>
+				<input type = "text" name = "memNm" placeholder="Name">
+			</dd>
+		</dl>
+		<dl>
+			<dt class='all'>성별 &nbsp;:&nbsp;<input type = "radio" name = "memSe">남자&nbsp;&nbsp;<input type = "radio" name = "memSe">여자
+			</dt>
+		</dl>
+		<dl>
+			<dt class='all'>핸드폰번호</dt>
+			<dd>
+				<input type = "text" name = "memPhone" placeholder="번호입력">
+			</dd>
+		</dl>
+		<dl>
+			<dt class='all'>생년월일(선택사항)</dt>
+			<dd>
+				<div class="Box100">
+					<input type = "text" class="Year" name = "memYear" maxlength="4" placeholder="년(4자)">
+					<select type = "option" class="Month" name = "memMonth">
+					  <option>월</option>
+					  <option value="01">1월</option>
+					  <option value="02">2월</option>
+					  <option value="03">3월</option>
+					  <option value="04">4월</option>
+					  <option value="05">5월</option>
+					  <option value="06">6월</option>
+					  <option value="07">7월</option>
+					  <option value="08">8월</option>
+					  <option value="09">9월</option>
+					  <option value="10">10월</option>
+					  <option value="11">11월</option>
+					  <option value="12">12월</option>
+					</select>
+					<input type = "text" class="Date" name = "memDate" maxlength="2" placeholder="일">
+				</div>
+			</dd>
+		</dl>
+		<dt class='ok'>
+		<input type = "submit" class="Join1" value = "회원가입 완료">
+		</dt>
+	</div>
 </form>
 {% endblock %}

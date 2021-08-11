@@ -4,8 +4,6 @@ const fs = require("fs").promises;
 const constants = require("fs").constants;
 const path = require("path");
 
-/* 회원 관련 유효성 검사 */
-
 module.exports.joinValidator = async (req, res, next) => {
 	
 	try {
@@ -14,7 +12,9 @@ module.exports.joinValidator = async (req, res, next) => {
 			memId : "아이디를 입력하세요.",
 			memPw : "비밀번호를 입력하세요.",
 			memPwRe : "비밀번호를 확인해 주세요.",
-			memNm : "회원명을 입력해 주세요.",
+			memNm : "이름을 입력해 주세요.",
+			memSe : "성별을 선택하세요",
+			memPhone : "휴대폰번호를 입력하세요",
 		};
 		
 		for (key in required) {
@@ -23,19 +23,19 @@ module.exports.joinValidator = async (req, res, next) => {
 			}
 		}
 		
-		if (req.body.memId.length < 10) {
-			throw new Error("아이디는 10자리 이상 입력해 주세요.");
+		if (req.body.memId.length < 6) {
+			throw new Error("아이디는 6자리 이상 입력해 주세요.");
 		}
 		
-		if (req.body.memPw.length < 10) {
-			throw new Error("비밀번호는 10자리 이상 입력해 주세요.");
+		if (req.body.memPw.length < 8) {
+			throw new Error("비밀번호는 8자리 이상 입력해 주세요.");
 		}
 		
 		if (req.body.memPw != req.body.memPwRe) {
 			throw new Error("비밀번호가 일치하지 않습니다.");
 		}
-		
-		/* 회원 중복 여부 체크 */
+
+
 		try {
 			const filePath = path.join(__dirname, "../data/member/", req.body.memId + ".json");
 			await fs.access(filePath, constants.F_OK);
@@ -53,7 +53,6 @@ module.exports.joinValidator = async (req, res, next) => {
 	next();
 };
 
-/* 로그인 유효성 검사 */
 module.exports.loginValidator = (req, res, next) => {
 	try {
 		if (!req.body.memId) {
@@ -62,6 +61,18 @@ module.exports.loginValidator = (req, res, next) => {
 		
 		if (!req.body.memPw) {
 			throw new Error("비밀번호를 입력하세요.");
+		}
+		
+		if (!req.body.memNm) {
+			throw new Error("이름을 입력하세요.");
+		}
+		
+		if (!req.body.memSe) {
+			throw new Error("성별을 선택하세요.");
+		}
+		
+		if (!req.body.memPhone) {
+			throw new Error("핸드폰 번호를 입력하세요.");
 		}
 		
 	} catch(err) {

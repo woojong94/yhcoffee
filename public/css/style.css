@@ -1,33 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap');
-* {box-sizing: border-box; color: #000000; font-family: 'Noto Sans KR', sans-serif;}
+* {
+	box-sizing: border-box;
+	color: #000000;
+	font-family: 'Noto Sans KR', sans-serif;
+}
 
 html {
-	font-size: 13px; width: 1200px; margin:0 auto;}
-
-body {margin: 0; padding: 0;}
-
-a {text-decoration: none; }
-
-ul {list-style: none; padding: 0; margin: 0;}
-
-.layout_width {width: 1200px; margin-left: auto; margin-right: auto;
+	font-size: 13px;
+	width: 1200px;
+	margin:0 auto;
 }
 
-
-/* nav S */
-nav {background-color: #d19f6d; height: 50px; top: 87px; width: 1200px; float: left; position: fixed; z-index: 2;	margin: 0 auto;
+body {
+	margin: 0;
 }
 
-nav:after {	display: block; content: ""; clear: all;}
-
-ul li {list-style: none; padding: 0;}
-nav ul li {float: left; width: calc(100% / 7); font-size: 1.65rem; padding-top: 10px;}
-nav ul li i {font-size: 2.5rem;}
-nav ul:after {display: block; content: ''; clear: left;
+a {
+	text-decoration: none;
 }
 
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 
-a {margin: 0; padding: 0; font-size: 100%; text-decoration: none; vertical-align: baseline; color: #666; background: transparent; cursor: pointer;}
+.layout_width {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav {
+    background-color: #d19f6d;
+    height: 50px;
+    top: 87px;
+    width: 1200px;
+	float: left;
+	position: fixed;
+	z-index: 10;
+	margin:0 auto;
+}
+
+nav:after {
+	display: block;
+	content: "";
+	clear: all;
+}
+
+ul li {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    float: left;
+    width: calc(100% / 7);
+    font-size: 1.65rem;
+	padding-top: 10px;
+}
+nav ul li i {
+    font-size: 2.5rem;
+}
+nav ul:after {
+    display: block;
+    content: '';
+    clear: left;
+}
+
+element.style {
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    text-decoration: none;
+    vertical-align: baseline;
+    color: #666;
+    background: transparent;
+    cursor: pointer;
+}
 
 strong {
     font-weight: bold;
@@ -220,11 +272,20 @@ body dd {
 	padding-right : 5px;
 }
 
-.Join1 {
+.login1 {
 	font-size : 20px;
 	margin-top : 10px;
 	margin-bottom : 8px;
-	background-color : #d19f6d;
+	background-color : white;
+	width : 200px;
+	border-radius: 10px;
+	color : #aaa;
+}
+
+.login1:hover {
+	background-color: white;
+	color : black;
+	cursor: pointer;
 }
 
 /** Footer */

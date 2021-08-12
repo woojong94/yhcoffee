@@ -2,9 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<script src='js/script.js'></script>
 		
 <!-- 		부분 CSS 적용시 사용
 		{% if addCss.length > 0 %}
@@ -15,20 +16,21 @@
 
 	</head>
 	<body>
-		<!-- {% block content %}
-		{% endblock %} -->
+		{% block content %}
+		{% endblock %}
 
 
 		{% block header %}
 		<header>
 		{% include "outline/header/header.html" %}
+
 		</header>
 		{% endblock %}
 
 		{% block nav %}
-		<nav>
-		{% include "outline/nav/nav.html" %}		
-		</nav>
+		<aside class='side_menu' >
+		{% include "outline/aside/aside.html" %}		
+		</aside>
 		{% endblock %}
 	
 

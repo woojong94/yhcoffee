@@ -1,20 +1,26 @@
+<!-- 정윤호 -->
+
 {% extends "../layout.html" %}
 
 {% block content %}
 <h1>로그인</h1>
 <form method="post" action="/member/login" target="ifrmHidden">
+	<div class="Bor">
 	<dl>
-		<dt>아이디</dt>
+		<dt class="all">아이디</dt>
 		<dd>
 			<input type="text" name="memId">
 		</dd>
 	</dl>
 	<dl>
-		<dt>비밀번호</dt>
+		<dt class="all">비밀번호</dt>
 		<dd>
 			<input type="password" name="memPw">
 		</dd>
 	</dl>
-	<input type="submit" value="로그인">
+	<dt class="ok">
+	<input type="submit" value="로그인" class="Join1">
+	</dt>
+	</div>
 </form>
 {% endblock %}

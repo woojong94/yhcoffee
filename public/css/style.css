@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+* { 
+	box-sizing: border-box;
+	color: #000000;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+html {
+	font-size: 13px;
+}
+
+body { 
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0; 
+	margin: 0;
+}
+
+
+.all {
+	font-size : 18px;
+	padding-left : 140px;
+	padding-bottom : 8px;
+	padding-top : 10px;
+}
+
+.Bor {
+	border : 0px solid #d19f6d;
+	margin-left : 250px;
+	margin-right : 250px;
+	background-color : #d19f6d;
+
+}
+
+.ok {
+	text-align : center;
+}
+
+body dd {
+	text-align : center;
+	padding-right : 50px;
+}
+
+.Year {
+	width : 80px;
+}
+
+.Month {
+	width : 50px;
+}
+
+.Date {
+	width : 50px;
+}
+
+.Box100 {
+	padding-right : 5px;
+}
+
+.Join1 {
+	font-size : 20px;
+	margin-top : 10px;
+	margin-bottom : 8px;
+	background-color : #d19f6d;
+}

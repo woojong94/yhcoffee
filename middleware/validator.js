@@ -11,8 +11,8 @@ module.exports.joinValidator = async (req, res, next) => {
 		const required = {
 			memId : "아이디를 입력하세요.",
 			memPw : "비밀번호를 입력하세요.",
-			memPwRe : "비밀번호를 확인해 주세요.",
-			memNm : "회원명을 입력해 주세요.",
+			memPwRe : "비밀번호를 확인하세요.",
+			memNm : "회원명을 입력하세요.",
 		};
 		
 		for (key in required) {
@@ -33,13 +33,13 @@ module.exports.joinValidator = async (req, res, next) => {
 			throw new Error("비밀번호가 일치하지 않습니다.");
 		}
 		
-		/* 회원 중복 여부 체크 */
+		
 		try {
 			const filePath = path.join(__dirname, "../data/member/", req.body.memId + ".json");
 			await fs.access(filePath, constants.F_OK);
 			
 				
-				return alert("이미 가입된 회원입니다. - " + req.body.memId, res);
+				return alert("이미 가입하셨습니다. - " + req.body.memId, res);
 		} catch(e) { 
 			
 		}
@@ -51,14 +51,15 @@ module.exports.joinValidator = async (req, res, next) => {
 	next();
 };
 
+
 module.exports.loginValidator = (req, res, next) => {
 	try {
 		if (!req.body.memId) {
-			throw new Error("아이디를 입력하세요.");
+			throw new Error("아이디를 입력하세요!!!");
 		}
 		
 		if (!req.body.memPw) {
-			throw new Error("비밀번호를 입력하세요.");
+			throw new Error("비밀번호를 입력하세요!!!");
 		}
 		
 	} catch(err) {

@@ -4,8 +4,6 @@ const fs = require("fs").promises;
 const constants = require("fs").constants;
 const path = require("path");
 
-/* 회원 관련 유효성 검사 */
-
 module.exports.joinValidator = async (req, res, next) => {
 	
 	try {
@@ -23,8 +21,8 @@ module.exports.joinValidator = async (req, res, next) => {
 			}
 		}
 		
-		if (req.body.memId.length < 10) {
-			throw new Error("아이디는 10자리 이상 입력해 주세요.");
+		if (req.body.memId.length < 6) {
+			throw new Error("아이디는 6자리 이상 입력해 주세요.");
 		}
 		
 		if (req.body.memPw.length < 10) {
@@ -53,7 +51,6 @@ module.exports.joinValidator = async (req, res, next) => {
 	next();
 };
 
-/* 로그인 유효성 검사 */
 module.exports.loginValidator = (req, res, next) => {
 	try {
 		if (!req.body.memId) {

@@ -207,7 +207,8 @@ header {
 .logo_search .icon_menu a:nth-child(1) img,
 .logo_search .icon_menu a:nth-child(2) img,
 .logo_search .icon_menu a:nth-child(3) img,
-.logo_search .icon_menu a:nth-child(4) img {
+.logo_search .icon_menu a:nth-child(4) img,
+.logo_search .icon_menu a:nth-child(5) img {
   height: 45px;
   position: relative;
   top: 3px;

@@ -36,14 +36,15 @@ ul {
 /* aside S */
 aside {
   position: fixed;
-  width: 200px;
-  height: 300px;
-  background-color: #ffffff;
+  width: 350px;
+  height: 500px;
+  background-color: #d19f6d;
   top: 0;
-  right: -300px;
-  border-right: 1px solid #212121;
+  right: -350px;
   transition: all 1s;
   z-index: 11;
+  border: 5px solid #ffffff;
+  color: #ffffff;
 }
 
 aside.on {
@@ -56,8 +57,19 @@ aside .close_menu {
   right: 15px;
   top: 15px;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 4.5rem;
 }
+
+aside ul {
+  font-size: 30px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+aside ul li {
+  margin-top: 35px;
+}
+
 /* aside E */
 
 /* main S */
@@ -68,7 +80,7 @@ a {
   font-size: 100%;
   text-decoration: none;
   vertical-align: baseline;
-  color: #666;
+  color: #ffffff;
   background: transparent;
   cursor: pointer;
 }
@@ -140,7 +152,7 @@ strong {
 
 .main_banner {
   /* display: inline-block; */
-  background-color: #a3d199;
+  background-color: #d19f6d;
   box-shadow: 0px 2px 4px #212121;
   width: auto;
 }
@@ -164,10 +176,10 @@ img {
 
 /* main E */
 
-/** 모바일 상단 */
+/* header S */
 
 header {
-  background-color: #d19f6d;
+  background-color: #ece8e2;
   padding: 30px;
 }
 
@@ -183,18 +195,20 @@ header {
 }
 
 .logo_search .logo {
-  width: calc(100% / 3);
+  width: calc(100% / 2);
   float: left;
 }
 
 .logo_search .logo img {
-  height: 96px;
+  width: 100%;
+  height: 95px;
 }
 
 .logo_search .icon_menu a:nth-child(1) img,
 .logo_search .icon_menu a:nth-child(2) img,
 .logo_search .icon_menu a:nth-child(3) img,
-.logo_search .icon_menu a:nth-child(4) img {
+.logo_search .icon_menu a:nth-child(4) img,
+.logo_search .icon_menu a:nth-child(5) img {
   height: 45px;
   position: relative;
   top: 3px;
@@ -202,36 +216,31 @@ header {
 }
 
 .logo_search .icon_menu {
-  padding: 26px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  margin-right: -80px;
 }
 
-/* 모바일 상단 헤더 */
-
-/* 모바일 상단 헤더 */
+/* header E */
 
 /*footer*/
 /** login */
 .all {
   font-size: 18px;
-  padding-left: 140px;
-  padding-bottom: 8px;
-  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-top: 7px;
 }
 
 .Bor {
-  border: 0px solid #d19f6d;
-  margin-left: 250px;
-  margin-right: 250px;
+  margin-top: 150px;
+  margin-left: 360px;
+  margin-right: 360px;
   background-color: #d19f6d;
+  text-align: center;
 }
 
 .ok {
   text-align: center;
-}
-
-body dd {
-  text-align: center;
-  padding-right: 50px;
 }
 
 .Year {
@@ -257,6 +266,10 @@ body dd {
   background-color: #d19f6d;
 }
 
+.join1:hover {
+  background-color: white;
+  cursor: pointer;
+}
 /** Footer */
 
 footer {
@@ -336,18 +349,22 @@ footer .etc {
 }
 
 /* login */
-.Join1 {
+.login1 {
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 8px;
-  background-color: green;
+  background-color: white;
   width: 200px;
   border-radius: 10px;
-  color: white;
+  color: #aaa;
 }
 
-.Join1:hover {
+.login1:hover {
   background-color: white;
-  color: green;
+  color: black;
   cursor: pointer;
+}
+
+dd {
+  margin: auto;
 }

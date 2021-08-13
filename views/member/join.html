@@ -1,45 +1,38 @@
 <!-- 이주영 -->
-<!-- {% extends '../layout.html' %} -->
+
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 {% block content %}
 <form method = "post" action = "/member/join" target = "ifrmHidden">
 	<div class="Bor">
 		<dl>
 			<dt class='all'>아이디</dt>
-			<dd>
-				<input type = "text" name = "memId" placeholder="ID">
-			</dd>
+			<input type = "text" name = "memId" placeholder="ID">
 		</dl>
 		<dl>
 			<dt class='all'>비밀번호</dt>
-			<dd>
-				<input type = "password" name = "memPw" placeholder="Password">
-			</dd>
+			<input type = "password" name = "memPw" placeholder="Password">
 		</dl>
 		<dl>
 			<dt class='all'>비밀번호 확인</dt>
-			<dd>
-				<input type = "password" name = "memPwRe" placeholder="Confirm Password">
-			</dd>
+			<input type = "password" name = "memPwRe" placeholder="Confirm Password">
+
 		</dl>
 			<dl>
 			<dt class='all'>이름</dt>
-			<dd>
-				<input type = "text" name = "memNm" placeholder="Name">
-			</dd>
+			<input type = "text" name = "memNm" placeholder="Name">
 		</dl>
 		<dl>
-			<dt class='all'>성별 &nbsp;:&nbsp;<input type = "radio" name = "memSe">남자&nbsp;&nbsp;<input type = "radio" name = "memSe">여자
+			<dt class='all'>성별
+			<br>
+			<input type = "radio" class="Se" name = "memSe">남자&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "radio" class="Se" name = "memSe">여자
 			</dt>
 		</dl>
 		<dl>
 			<dt class='all'>핸드폰번호</dt>
-			<dd>
-				<input type = "text" name = "memPhone" placeholder="번호입력">
-			</dd>
+			<input type = "text" name = "memPhone" placeholder="번호입력">
 		</dl>
 		<dl>
 			<dt class='all'>생년월일(선택사항)</dt>
-			<dd>
 				<div class="Box100">
 					<input type = "text" class="Year" name = "memYear" maxlength="4" placeholder="년(4자)">
 					<select type = "option" class="Month" name = "memMonth">
@@ -59,10 +52,9 @@
 					</select>
 					<input type = "text" class="Date" name = "memDate" maxlength="2" placeholder="일">
 				</div>
-			</dd>
 		</dl>
 		<dt class='ok'>
-		<input type = "submit" class="Join1" value = "회원가입 완료">
+			<input type = "submit" class="Join1" value = "회원가입 완료">
 		</dt>
 	</div>
 </form>

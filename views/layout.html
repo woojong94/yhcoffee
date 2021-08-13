@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <script src='js/script.js'></script>
+   </head>
+   <body>
+
+      
+    
+      {% block header %}
+      <header>
+      {% include "outline/header/header.html" %}
+      {% block content %}
+      {% endblock %}
+      </header>
+      {% endblock %}
+
+      {% block aside %}
+      <aside class='side_menu' >
+      {% include "outline/aside/aside.html" %}      
+      </aside>
+      {% endblock %}
+   
+
+      {% block main %}
+      <main>
+      {% include "outline/main/main.html" %}
+      </main>
+      {% endblock %}
+
+
+      {% block footer %}
+      <footer>
+      {% include "outline/footer/footer.html" %}
+      </footer>
+      {% endblock %}
+   </body>
+</html>

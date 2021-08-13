@@ -8,7 +8,6 @@ const path = require("path");
 const logger = require("./lib/logger");
 const bootStrap = require("./boot");
 
-/* 라우터 */
 const memberRouter = require("./routes/member");
 const mainRouter = require("./routes")
 
@@ -40,7 +39,6 @@ app.use(session({
 
 app.use(bootStrap);	
 
-/* 라우터 등록 */
 
 app.use("/", mainRouter);	
 app.use("/member", memberRouter); 
@@ -52,7 +50,6 @@ app.use((req, res, next) => {
 	next(err);
 });
 
-/* 오류 처리 라우터 */
 app.use((err, req, res, next) => {
 	const data = {
 		message : err.message,
@@ -60,7 +57,6 @@ app.use((err, req, res, next) => {
 		stack : err.stack,
 	};
 	
-	/* 로그 기록 */
 	logger(`[${data.status}]${data.message}` , "error");
 	logger(data.stack, "error");
 	

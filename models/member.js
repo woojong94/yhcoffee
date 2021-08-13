@@ -3,7 +3,6 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 
 const member = {
-	/* 회원가입 */
 	async join(data) {
 		
 		try {
@@ -38,7 +37,6 @@ const member = {
 			return false; 
 		}
 	},
-	/* 회원 정보 조회 */
 	async get(memId) {
 		try {
 			const filePath = path.join(__dirname, "../data/member", memId + ".json");

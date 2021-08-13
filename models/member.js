@@ -32,7 +32,7 @@ const member = {
 				return true;
 			}
 			
-			throw new Error("비밀번호가 불일치합니다.");
+			throw new Error("비밀번호가 다릅니다.");
 		} catch (err) {
 			return false; 
 		}
